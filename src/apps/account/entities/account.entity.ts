@@ -1,5 +1,5 @@
-import { DefaultEntity } from 'src/common/models/base.entity';
-import { GENDER_CODE } from 'src/common/enum/common.enum';
+import { DefaultEntity } from 'common/models/base.entity';
+import { GENDER_CODE } from 'common/enum/common.enum';
 import { Entity, Column, Index, Unique } from 'typeorm';
 import { Min } from 'class-validator';
 @Entity('account')
@@ -56,4 +56,8 @@ export class Account extends DefaultEntity {
   // 생년월일
   @Column({type:'date', comment:'회원 생년월일'})
   birth: Date;
+
+  // 리플래시토큰
+  @Column({type:'string', nullable:true, unique:true ,comment:'리플래시 토큰'})
+  refresh_token:string
 }
