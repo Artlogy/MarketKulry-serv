@@ -1,12 +1,15 @@
-![header](https://capsule-render.vercel.app/api?type=wave&text="마켓컬리 모작")
+![header](https://capsule-render.vercel.app/api?type=wave&text="마켓컬리모작")
 
-npm - JSON Package
 
+# NPM PACKAGES
 
 ## DATABASE 
 ```sh
-npm install --save @nestjs/typeorm typeorm pg   //postgresql
-npm i --save class-validator class-transformer  //for validation
+//postgresql
+npm install --save @nestjs/typeorm typeorm pg
+
+ //for validation
+npm i --save class-validator class-transformer
 ```
 
 ## TECHNOLOGY
@@ -15,9 +18,13 @@ npm i --save class-validator class-transformer  //for validation
 npm install --save @nestjs/jwt passport-jwt
 npm install --save-dev @types/passport-jwt
 
+//for use uuid
+npm i uuid
+npm i --save-dev @types/uuid
 ```
 
 ## OTHER
 ```sh
-npm install --save @nestjs/swagger swagger-ui-express   //for swagger (API UI)
+//for swagger (API UI)
+npm install --save @nestjs/swagger swagger-ui-express
 ```
