@@ -9,7 +9,7 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "src",   //베이스 URL (IMPORT PATH )
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,

@@ -1,4 +1,12 @@
 {
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "bracketSpacing": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": false,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "bracketSameLine": true,
+  "parser": "json css scss typescript"
 }
