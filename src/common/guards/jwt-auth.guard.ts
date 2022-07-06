@@ -6,6 +6,7 @@ import {
 import { Reflector } from '@nestjs/core';
 import { JwtService } from '@nestjs/jwt';
 import { AuthGuard } from '@nestjs/passport';
+import { AuthService } from 'apps/auth/auth.service';
 
 
 @Injectable()

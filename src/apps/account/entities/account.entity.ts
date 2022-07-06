@@ -50,14 +50,14 @@ export class Account extends DefaultEntity {
   address_sub: string;
   
   // 성별
-  @Column({ enum: GENDER_CODE,length:128 ,comment:'성별'})
-  gender: string[] | GENDER_CODE;
+  @Column({ enum: GENDER_CODE ,comment:'성별'})
+  gender:  GENDER_CODE;
 
   // 생년월일
   @Column({type:'date', comment:'회원 생년월일'})
   birth: Date;
 
   // 리플래시토큰
-  @Column({type:'string', nullable:true, unique:true ,comment:'리플래시 토큰'})
+  @Column({type:'text', nullable:true, unique:true ,comment:'리플래시 토큰'})
   refresh_token:string
 }

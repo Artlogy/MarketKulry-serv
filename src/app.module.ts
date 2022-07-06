@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppsMeta } from 'src/apps/app.meta';
+import { AppsMeta } from 'apps/app.meta';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -23,18 +24,9 @@ import { AppsMeta } from 'src/apps/app.meta';
       maxQueryExecutionTime: Number(process.env.DB_QUERY_EXECUTION_TIME),
       autoLoadEntities: true,
       synchronize: process.env.NODE_ENV !== 'production',
-      extra: {
-        /*
-        // ssl
-        ssl: {
-          rejectUnauthorized: false,
-        },
-        */
-        // timezone: 'Z',
-        // timezone: 'Asia/Seoul',       //Asia/Jakarta
-      },
       entities: [...AppsMeta.entities],
     }),
+    ...AppsMeta.module,
   ],
 })
 export class AppModule {}

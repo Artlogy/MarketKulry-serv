@@ -1,15 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import {CreateSignUpDto} from 'apps/auth/dto/create-signup.dto';
-import {UpdateSignUpDto} from 'apps/auth/dto/update-signup.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { CreateAccountDto } from 'apps/account/dto/create-account.dto';
+import { AccountRepo } from 'apps/account/repo/account.repo';
+
 
 @Injectable()
 export class AuthService {
   constructor(
+    @InjectRepository(AccountRepo)
+    private accountRepo:AccountRepo,
     private jwtService:JwtService,
   ){}
 
-  signUp(createAuthDto: CreateSignUpDto) {
+  async createUser(dto: CreateAccountDto) {
+    console.log(dto);
     return 'This action adds a new auth';
   }
 
@@ -21,9 +26,7 @@ export class AuthService {
     return `This action returns a #${id} auth`;
   }
 
-  update(id: number, updateAuthDto: UpdateSignUpDto) {
-    return `This action updates a #${id} auth`;
-  }
+
 
   remove(id: number) {
     return `This action removes a #${id} auth`;

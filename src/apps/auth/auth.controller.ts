@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { CreateAccountDto } from 'apps/account/dto/create-account.dto';
 import { Public } from 'common/decorators/rbac.decorator';
 import { AuthService } from './auth.service';
 
@@ -11,8 +12,8 @@ export class AuthController {
 
   @Public()
   @ApiOperation({summary:'회원가입'})
-  @Post('sign-up')
-  signUp(){
-    
+  @Post('createUser')
+  async createUser(@Body() dto:CreateAccountDto) : Promise<string>{
+    return this.authService.createUser(dto);
   }
 }
